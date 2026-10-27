@@ -1,4 +1,186 @@
-.counter {
+/* TIPOGRAFIA */
+@font-face {
+  font-family: 'RusticDelight';
+  src: url('./assets/Fonts/Rustic\ Delight.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Kunaroh';
+  src: url('./assets/Fonts/Kunaroh.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'NewsGothBT';
+  src: url('./assets/Fonts/NewsGoth\ BT\ Bold.ttf') format('truetype');
+}
+
+/* VARIABLES GLOBALES (NOMBRES IDENTICOS A LOS @font-face) */
+:root {
+--font-title: 'RusticDelight', sans-serif;
+  --font-subtitle: 'Kunaroh', sans-serif;
+  --font-body: 'NewsGothBT', sans-serif;
+
+}
+
+/* __________________________________________________________________________________________ */
+
+/* ESTRUCTURA Y FONDO PRINCIPAL */
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  background-color: #ffffff; /* Fondo oscuro global para ver logos/textos claros */
+  color: #2D3748;
+  font-family: var(--font-body);
+}
+
+main {
+  flex: 1;
+  padding: 4rem 2rem; /* Le da espacio para respirar mientras vas agregando contenido */
+}
+
+/* __________________________________________________________________________________________ */
+
+/* CLASES DE UTILIDAD DE TIPOGRAFIA */
+.font-title {
+  font-family: var(--font-title);
+}
+
+.font-subtitle {
+  font-family: var(--font-subtitle);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* __________________________________________________________________________________________ */
+
+header {
+  display: flex;
+  justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
+  align-items: center;
+  /* padding: 1rem 2rem; */
+  height: 70px;         /* 1. Defines una altura fija y delgada para el header */
+  padding: 0 2rem;
+  background-color: #055A74; /* Fondo oscuro para el header */
+}
+
+.ImagotipoDB img {
+  max-height: 55px; /* Ajusta la altura de tu logo según necesites */
+  width: auto;
+  display: block;
+}
+
+/* Espaciado de la barra de navegación */
+.navbar {
+  display: flex;
+  gap: 3.5rem; /* Separa los enlaces entre sí */
+}
+
+.navbar a {
+  font-family: var(--font-subtitle);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+  text-shadow: #ffffff;
+  color: #ffffff; /* Cambio de color al pasar el mouse */
+}
+
+/* __________________________________________________________________________________________ */
+
+footer.footer {
+  display: flex;
+  flex-direction: column; /* Divide el footer en 3 columnas*/
+  justify-content: center; 
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  gap: 2rem; /* Separa los enlaces entre sí */
+  background-color: #055A74; /* Fondo oscuro para el header */
+}
+
+.Mensage-to-colaborate h2 {
+  /* display: flex; */
+  text-align: center;
+  font-family: var(--font-title);
+  font-size: 3rem;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2; /* Distanciaas entre las líneas del texto*/
+
+}
+
+.SocialMedia-Links {
+  display: flex;
+  font-family: var(--font-subtitle);
+  color: #ffffff;
+  gap: 4rem; /* Separa los enlaces entre sí*/
+  justify-content: center;
+}
+
+.SocialMedia-Links a { /* BOTONES DE LOS ENLACES */
+  display: flex;
+  font-family: var(--font-subtitle);
+  background-color: #ffffff;
+  color: #055A74;
+  text-decoration: none; /* Quita el subrayado azul de los links */ 
+  padding: 0.8rem 3rem;
+  /* padding: 0.8rem 3rem; */
+  border-radius: 10px; /* Redondea los bordes por completo */
+  font-size: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.SocialMedia-Links a:hover { /* Efecto visual suave al pasar el mouse por encima*/
+  background-color: #b6dfea;
+  transition: transform 0.2s ease;
+  /* transform: translateY(-2px); Se eleva un par de píxeles */
+}
+
+.LogoDB img {
+  max-height: 65px; /* Ajusta la altura de tu logo según necesites */
+  width: auto;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.footer-Bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-subtitle);
+  color: #ffffff;
+  width: 100%;
+  max-width: 400px;
+}
+
+.footer-Bottom hr { /* etiqueta <hr /> que dibuja la linea divisoria */
+  width: 100%; /* La línea mide los mismos 400px del contenedor */
+  border: 0;
+  height: 1px;
+  background-color: #ffffff;
+  margin: 0.5rem 0;
+}
+
+
+
+
+
+/* .counter {
   font-size: 16px;
   padding: 5px 10px;
   border-radius: 5px;
@@ -15,7 +197,6 @@
     outline: 2px solid var(--accent);
     outline-offset: 2px;
   }
-}
 
 .hero {
   position: relative;
@@ -181,4 +362,4 @@
     right: 0;
     border-right-color: var(--border);
   }
-}
+} */
