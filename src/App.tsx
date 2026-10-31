@@ -9,21 +9,26 @@ import Services from "./components/Services";
 import AboutMe from "./components/AboutMe";
 import PersonalIndentity from "./components/PersonalIdentity";
 import Footer from "./components/Footer"; 
+import homeIcon from "./assets/Icons/Home Icon.svg";
 import './App.css';
 
 export default function App() {
   return(
     <>
-    <Header/>
-    <main> {/* Esta etiqueta solo envuelve las secciones centrales en App.tsx */}
-      <Hero /> {/* Portada principal de la página*/}
-      <Proyects/>
-      <Proyects/>
-      <Services/>
-      <AboutMe/>
-      <PersonalIndentity/>
-    </main>
-    <Footer/>
+    <div id="top">
+      <Header/>
+      <main> {/* Esta etiqueta solo envuelve las secciones centrales en App.tsx */}
+        <Hero /> {/* Portada principal de la página */}
+        <Proyects/>
+        <Services/>
+        <AboutMe/>
+        <PersonalIndentity/>
+      </main>
+      <Footer/>
+      <a href="#top" className="home-float-btn" title="Return to begin">
+        <img src={homeIcon} alt="Inicio"></img>
+      </a>
+    </div>
     </>
   );
 }

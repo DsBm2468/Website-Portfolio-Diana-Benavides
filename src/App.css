@@ -19,9 +19,9 @@
 --font-title: 'RusticDelight', sans-serif;
   --font-subtitle: 'Kunaroh', sans-serif;
   --font-body: 'NewsGothBT', sans-serif;
-
 }
 
+/* __________________________________________________________________________________________ */
 /* __________________________________________________________________________________________ */
 
 /* ESTRUCTURA Y FONDO PRINCIPAL */
@@ -32,6 +32,10 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth; /* Desplazamiento suave para toda la página */
 }
 
 body {
@@ -47,6 +51,7 @@ main {
 }
 
 /* __________________________________________________________________________________________ */
+/* __________________________________________________________________________________________ */
 
 /* CLASES DE UTILIDAD DE TIPOGRAFIA */
 .font-title {
@@ -61,6 +66,7 @@ main {
   font-family: var(--font-body);
 }
 
+/* __________________________________________________________________________________________ */
 /* __________________________________________________________________________________________ */
 
 header {
@@ -99,12 +105,30 @@ header {
   color: #ffffff; /* Cambio de color al pasar el mouse */
 }
 
+.home-float-btn {
+  position: fixed; /* Botón fijo en la pantalla */
+  /* bottom: 2rem; */
+  right: 2rem;
+  background-color: #7EBBCF;
+  width: 45px;
+  height: 45px;
+  padding: 0.5rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* Sombreado */
+  z-index:1000;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* __________________________________________________________________________________________ */
 /* __________________________________________________________________________________________ */
 
 footer.footer {
   display: flex;
   flex-direction: column; /* Divide el footer en 3 columnas*/
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   text-align: center;
   padding: 0.5rem;
@@ -120,7 +144,7 @@ footer.footer {
   letter-spacing: 0.01rem;
   color: #ffffff;
   margin: 0;
-  line-height: 1; /* Distanciaas entre las líneas del texto*/
+  line-height: 1; /* Distancias entre las líneas del texto*/
 
 }
 
@@ -139,7 +163,8 @@ footer.footer {
   font-family: var(--font-subtitle);
   background-color: #ffffff;
   color: #055A74;
-  text-decoration: none; /* Quita el subrayado azul de los links */ 
+  text-decoration: none; /* Quita el subrayado azul de los links */
+  -webkit-text-stroke: 0.5px #055A74;
   padding: 0.5rem 2rem;
   /* padding: 0.8rem 3rem; */
   border-radius: 10px; /* Redondea los bordes por completo */
@@ -191,190 +216,93 @@ footer.footer {
   margin: 0.5rem 0;
 }
 
+/* __________________________________________________________________________________________ */
+/* __________________________________________________________________________________________ */
 
-
-
-
-/* .counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
-
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
-
-.hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
+/* HERO (Portada principal de la página) */
+.hero-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 3rem; */
+  /* padding: 4rem 2rem; */
+  /* max-width: 1200px; */
+  /* margin: 0 auto; */
+  /* min-height: calc(100vh - 70px); */
 }
 
-#center {
+.hero-content { /* Limitan los elementos a la mitad izquierda de la pantalla */
+flex: 1;
+max-width: 50%;
+}
+
+.hero-media { /* Limitan los elementos a la mitad derecha de la pantalla */
+  flex: 1;
+  max-width: 50%;
+}
+
+.LogoBDinHero {
+  max-height: 1500px; /* Ajusta la altura de tu logo según necesites */
+  width: auto;
+  display: block;
+  /* margin-bottom: 0.5rem; */
+}
+
+.hero-text {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  text-align: justify;
+  color: #055A74;
+  line-height: 1.6; /* Distancias entre las líneas del texto*/
+  margin-bottom: 0.5rem;
+  /* margin: 0.8rem; */
+}
+
+.hero-btns {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-subtitle);
+  font-size: 1.3rem;
+  font-weight: bold;
+  /* padding: 0.5rem 2rem; */
+  gap: 1.5rem;
+  flex-wrap: wrap; /* Pasa a la siguiente línea si no caben */
+  margin-top: 1rem;
+}
+
+.link-proyects {
+  font-family: var(--font-subtitle);
+  color: #2D3748;
+  font-weight: bold;
+  text-decoration: none; /* Quita el subrayado azul de los links */
+  -webkit-text-stroke: 0.5px #2D3748;
+  /* kkkborder-bottom: 2px solid transparent; Reserva el espacio de la línea */
+  /* transition: color 0.2s ease, border-color 0.2s ease; */
+}
+
+.link-proyects:hover {
+  transform: translateY(-2px); /* Se eleva un par de píxeles */
+}
+
+.btn-cv {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
+  align-items: center;
+  color: #ffffff;
+  background-color: #7EBBCF;
+  text-decoration: none; /* Quita el subrayado azul de los links */
+  -webkit-text-stroke: 0.5px #ffffff;
+  height: 23px;
+  /* padding: 0.5rem 2rem; */
+  padding: 0.6rem 1.8rem; /* Quitar 'height: 23px' permite que el padding le dé altura sin cortar el texto */
+  border-radius: 10px;
+  width: auto;
+  display: block;
+  border-radius: 10px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-#next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
+.btn-cv:hover {
+  background-color: #055A74;
+  transform: translateY(-2px);
 }
-
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-}
-
-#next-steps ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
-}
-
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
-}
-
-.ticks {
-  position: relative;
-  width: 100%;
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
-  }
-
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
-  }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
-  }
-} */
