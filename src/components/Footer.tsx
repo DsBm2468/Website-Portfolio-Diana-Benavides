@@ -2,7 +2,7 @@ import LogotipoDB from "../assets/Elements-Header-AND-Footer/LogotipoBlanco.png"
 
 import iconCorreo from "../assets/Icons/Email Icon.svg";
 import iconLinkedIn from "../assets/Icons/LinkedIn Icon.svg";
-import iconBehance from "../assets/Icons/Behance Icon.svg";
+// import iconBehance from "../assets/Icons/Behance Icon.svg";
 import iconArtStation from "../assets/Icons/ArtStation Icon.svg";
 
 function Footer(){
@@ -46,7 +46,7 @@ function Footer(){
             </a>
 
             {/* BEHANCE */}
-            <a
+            {/* <a
               href = "https://www.behance.net/DsBm"
               target="_blank"
               rel="noreferrer"
@@ -56,7 +56,7 @@ function Footer(){
 
                 Behance
 
-            </a>
+            </a> */}
 
             {/* ARTSTATION */}
             <a

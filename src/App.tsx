@@ -9,7 +9,8 @@ import Services from "./components/Services";
 import AboutMe from "./components/AboutMe";
 import PersonalIndentity from "./components/PersonalIdentity";
 import Footer from "./components/Footer"; 
-import homeIcon from "./assets/Icons/Home Icon.svg";
+// import homeIcon from "./assets/Icons/Home Icon.svg";
+
 import './App.css';
 
 export default function App() {
@@ -25,9 +26,9 @@ export default function App() {
         <PersonalIndentity/>
       </main>
       <Footer/>
-      <a href="#top" className="home-float-btn" title="Return to begin">
+      {/* <a href="#top" className="home-float-btn" title="Return to begin">
         <img src={homeIcon} alt="Inicio"></img>
-      </a>
+      </a> */}
     </div>
     </>
   );

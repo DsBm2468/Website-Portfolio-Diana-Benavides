@@ -14,11 +14,16 @@
   src: url('./assets/Fonts/NewsGoth\ BT\ Bold.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'NewsGothBT Roman';
+  src: url('./assets/Fonts/NewsGoth\ BT\ Roman.ttf') format('truetype');
+}
 /* VARIABLES GLOBALES (NOMBRES IDENTICOS A LOS @font-face) */
 :root {
 --font-title: 'RusticDelight', sans-serif;
   --font-subtitle: 'Kunaroh', sans-serif;
   --font-body: 'NewsGothBT', sans-serif;
+  --font-body2: 'NewsGothBT Roman', sans-serif;
 }
 
 /* __________________________________________________________________________________________ */
@@ -47,7 +52,8 @@ body {
 
 main {
   flex: 1;
-  padding: 4rem 2rem; /* Le da espacio para respirar mientras vas agregando contenido */
+  /* padding: 4rem 2rem; Le da espacio para respirar mientras vas agregando contenido */
+  padding: 0;
 }
 
 /* __________________________________________________________________________________________ */
@@ -70,6 +76,12 @@ main {
 /* __________________________________________________________________________________________ */
 
 header {
+  position: sticky;          /* Ancla el header en la parte superior */
+  top: 0;                    /* Lo pega al borde superior de la ventana */
+  z-index: 1000;             /* Evita que textos o imágenes pasen por encima */
+  width: 100%;
+  box-sizing: border-box;
+  
   display: flex;
   justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
   align-items: center;
@@ -105,9 +117,9 @@ header {
   color: #ffffff; /* Cambio de color al pasar el mouse */
 }
 
-.home-float-btn {
+.home-float-btn { 
   position: fixed; /* Botón fijo en la pantalla */
-  /* bottom: 2rem; */
+  bottom: 2rem;
   right: 2rem;
   background-color: #7EBBCF;
   width: 45px;
@@ -122,6 +134,20 @@ header {
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
+.home-float-btn:hover {
+  background-color: #93e1f9;
+  transform: scale(1.1);
+}
+
+/* .home-float-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+} */
+
 /* __________________________________________________________________________________________ */
 /* __________________________________________________________________________________________ */
 
@@ -131,7 +157,7 @@ footer.footer {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0.5rem;
+  padding: 1.5rem;
   gap: 1rem; /* Separa los enlaces entre sí */
   background-color: #055A74; /* Fondo oscuro para el header */
 }
@@ -224,6 +250,8 @@ footer.footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 4rem 2rem; /* Le da espacio para respirar mientras vas agregando contenido */
+
   /* gap: 3rem; */
   /* padding: 4rem 2rem; */
   /* max-width: 1200px; */
@@ -305,4 +333,604 @@ max-width: 50%;
 .btn-cv:hover {
   background-color: #055A74;
   transform: translateY(-2px);
+}
+
+/* __________________________________________________________________________________________ */
+/* __________________________________________________________________________________________ */
+/* __________________________________________________________________________________________ */
+
+/* ABOUT ME */
+.about-container {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  flex-direction: column;
+  width: 100%;
+  /* gap: 3rem; */
+}
+
+.Titles-of-sections {
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  color: #055A74;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.about-body {
+  background-color: #B6DFEA;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;     /* Margen interno para que no quede pegado a los bordes del fondo */
+  box-sizing: border-box; /* Evita que el padding desborde la pantalla */
+}
+
+.about-photos {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.photoDiana {
+  width: 400px;
+  height: auto;
+  /* max-height: 350px; */
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(5, 90, 116, 0.1);
+}
+
+.toonDiana {
+  width: 285px;
+  height: auto;
+  /* max-height: 350px; */
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.about-content {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  /* gap: 3rem; */
+  flex-direction: column; /* <-- AJUSTE 4: Apila h3 y párrafos de arriba a abajo */
+  gap: 0.8rem;
+}
+
+.about-content h3 {
+  font-family: var(--font-subtitle);
+  font-size: 2.4rem;
+  color: #055A74;
+  -webkit-text-stroke: 0.5px #055A74;
+
+}
+
+.about-me {
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  color: #055A74;
+  line-height: 1.5;
+  margin: 0;
+  text-align: justify;
+  padding: 3px;
+}
+
+/* __________________________________________________________________________________________ */
+/* __________________________________________________________________________________________ */
+
+/* HABILIDADES Y SOFTWARE */
+.skills-and-software {
+  display: flex;
+  width: 100%;
+}
+
+.skills-and-software h3{
+  font-family: var(--font-subtitle);
+  font-size: 2.4rem;
+  color: #2D3748;
+  -webkit-text-stroke: 0.5px #2D3748;
+}
+
+.skills-column {
+  flex: 1;
+  max-width: 50%;
+  background-color: #7EBBCF; /* Tono azul claro de tu paleta */
+  padding: 3rem 4rem;
+  box-sizing: border-box;
+}
+
+.skills-list {
+  /* list-style: none; */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  text-align: justify;
+}
+
+.software-column {
+  flex: 1;
+  max-width: 50%;
+  background-color: #FFFFFF; /* Tono azul claro de tu paleta */
+  padding: 3rem 4rem;
+  box-sizing: border-box;
+}
+
+.software-list {
+    /* list-style: none; */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  text-align: justify;
+}
+
+/* __________________________________________________________________________________________ */
+/* __________________________________________________________________________________________ */
+
+/* EDUCATION and EXPERIENCE: ESTRUCTURA COMPARTIDA */
+.education,
+.experience {
+  display: flex;
+  width: 100%;
+  /* background-color: #B6DFEA; */
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;     /* Margen interno para que no quede pegado a los bordes del fondo */
+  box-sizing: border-box; /* Evita que el padding desborde la pantalla */
+  gap: 2rem;
+}
+
+.education-title,
+.experience-title {
+  flex: 1;
+  max-width: 40%;
+  /* text-align: left; */
+}
+
+.education h3,
+.experience h3 {
+  font-family: var(--font-subtitle);
+  font-size: 2.4rem;
+  /* margin: 0 0 0.5rem 0; */
+  /* color: #2D3748; */
+  /* -webkit-text-stroke: 0.5px #2D3748; */
+}
+
+.education-scroll-info,
+.experience-scroll-info {
+  flex: 1;
+  max-width: 60%;
+  max-height: 280px;
+  overflow-y: auto;
+  /* padding-right: 1.5rem; */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  /* Oculta la barra visual en Firefox y Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Oculta la barra visual en Chrome, Safari y Opera */
+.education-scroll-info::-webkit-scrollbar,
+.experience-scroll-info::-webkit-scrollbar {
+  display: none;
+}
+
+/* .education-scroll-info::-webkit-scrollbar-track {
+  width: 6px;
+}
+
+.education-scroll-info::-webkit-scrollbar-thumb {
+  background-color: #055A74;
+  border-radius: 10px;
+} */
+
+.education h2, 
+.experience h2 {
+  font-family: var(--font-subtitle);
+  font-size: 1.7rem;
+  margin: 0 0 0.3rem 0;
+  /* text-align: right; */
+}
+
+/* .education-card,
+.experience-card  {
+  border-left: 3px solid #055A74;
+  /* padding-left: 1.2rem; */
+ /* text-align: right;
+} */
+
+.education-card h4,
+.experience-card h4  {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  margin: 0;
+  /* padding: -1px; */
+}
+
+.education-card p,
+.experience-card p {
+  font-family: var(--font-body2);
+  font-size: 1.1rem;
+  /* margin: 0 0 0.3rem 0; */
+}
+
+/* __________________________________________________________________________________________ */
+/* __________________________________________________________________________________________ */
+
+/* EDUCACIÓN (Título Izquierda / Scroll Derecha) */
+.education {
+  background-color: #B6DFEA;
+}
+
+.education-title {
+  text-align: center;
+}
+
+.education h2,
+.education-card {
+  text-align: right;
+  /* margin: 0.3rem; */
+}
+
+.education-card {
+  border-right: 3px solid #2D3748;
+  padding-right: 1.2rem;
+}
+
+/* __________________________________________________________________________________________ */
+/* __________________________________________________________________________________________ */
+
+/* EXPERIENCIA (Título Derecha / Scroll Izquierda) */
+.experience {
+  background-color: #055A74;
+}
+
+.experience-title {
+  text-align: center;
+}
+
+.experience h3,
+.experience h2,
+.experience-card h4,
+.experience-card p {
+  color: #FFFFFF; /* Fuerza texto blanco sobre el fondo oscuro */
+}
+
+.experience h2,
+.experience-card {
+  text-align: left;
+}
+
+.experience-card {
+  border-left: 3px solid #B6DFEA; /* Solo línea a la izquierda */
+  padding-left: 1.2rem;
+}
+
+/* __________________________________________________________________________________________ */
+/* __________________________________________________________________________________________ */
+
+/* LOGROS DESTACADOS (Título Izquierda / Scroll Derecha) */
+.education-achievements {
+  background-color: #FFFFFF;
+}
+
+.education.achievements .education-card {
+  border-right-color: #055A74; 
+}
+
+.btn-projects {
+  display: inline-block;
+  margin-top: -1.5rem;
+  color: #ffffff;
+  background-color: #7EBBCF;
+  font-family: var(--font-subtitle);
+  text-decoration: none;
+  -webkit-text-stroke: 0.5px #ffffff;
+  padding: 0.6rem 1.8rem;
+  border-radius: 10px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+
+
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+  background-color: #7EBBCF; */
+  /* text-decoration: none; Quita el subrayado azul de los links */
+  /* font-family: var(--font-subtitle);
+  -webkit-text-stroke: 0.5px #ffffff;
+  height: 23px; */
+  /* padding: 0.5rem 2rem; */
+  /* padding: 0.6rem 1.8rem; Quitar 'height: 23px' permite que el padding le dé altura sin cortar el texto */
+  /* border-radius: 10px;
+  width: auto;
+  display: block;
+  border-radius: 10px;
+  transition: background-color 0.2s ease, transform 0.2s ease; */
+}
+
+.btn-projects:hover {
+  background-color: #055A74;
+  transform: translateY(-2px);
+}
+
+/* __________________________________________________________________________________________ */
+/* __________________________________________________________________________________________ */
+
+/* LANGUAGES */
+.languages {
+  display: flex;
+  flex-direction: column;        /* Título arriba y barras centradas en el medio */
+  width: 100%;
+  background-color: #B6DFEA;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 2.5rem;
+  box-sizing: border-box;
+  gap: 2rem;
+}
+
+.education-title,
+.experience-title {
+  flex: 1;
+  max-width: 40%;
+  /* text-align: left; */
+}
+
+.education h3,
+.experience h3 {
+  font-family: var(--font-subtitle);
+  font-size: 2.4rem;
+  /* margin: 0 0 0.5rem 0; */
+  /* color: #2D3748; */
+  /* -webkit-text-stroke: 0.5px #2D3748; */
+}
+
+.languages-title {
+  /* margin-bottom: 0; */
+   /* flex: 1; */
+  max-width: 40%;
+  /* text-align: left; */
+}
+
+.languages h3 {
+  font-size: 2.4rem;
+  font-family: var(--font-subtitle);
+}
+
+.languages-bars-column {
+  width: 100%;                   /* Obliga a ocupar el ancho disponible */
+  max-width: 650px;              /* En px (no %) para centrar el bloque en el medio */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Fila que alinea el nombre a la izquierda y la barra a la derecha */
+.languages-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.languages-name {
+  width: 110px;
+  text-align: right;
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  color: #055A74;
+  /* margin: 0; */
+}
+
+/* 1. CONTENEDOR EXTERIOR */
+.progress-track {
+  flex: 1;
+  height: 60px;                  /* 50px total - 10px bordes - 8px padding = 32px limpios para el líquido */
+  background-color: transparent;
+  border: 5px solid #055A74;
+  border-radius: 999px;
+  padding: 4px;                  /* Separa el líquido 4px en los 4 lados */
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* 2. EL LÍQUIDO INTERIOR */
+.liquid-fill {
+  height: 100%;
+  width: 0%;
+  opacity: 0;
+  background-color: #055A74;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  color: #FFFFFF;
+  font-family: var(--font-subtitle);
+  font-size: 1.15rem;
+  white-space: nowrap;
+
+  /* TRANSICIÓN DE SALIDA (al quitar el mouse):
+     Se recoge suavemente durante 1s y mantiene la opacidad 0.75s para que veas cómo se vacía */
+  transition: width 1s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.25s ease 0.75s;
+}
+
+/* Al pasar el mouse por CUALQUIERA de las dos barras, se llenan AMBAS al tiempo */
+.languages-bars-column:has(.progress-track:hover) .liquid-fill {
+  width: var(--nivel);
+  opacity: 1;
+  transition: width 1.1s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.55s ease;
+}
+
+/* 3. TEXTO INTERNO (aparece y desaparece sutilmente) */
+.liquid-fill p {
+  margin: 0;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.languages-bars-column:has(.progress-track:hover) .liquid-fill p {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease 0.25s, transform 0.5s ease 0.55s;
+}
+
+/* __________________________________________________________________________________________ */
+/* __________________________________________________________________________________________ */
+
+/* PERSONAL IDENTITY */
+.personal-identity {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  flex-direction: column;
+  width: 100%;
+  /* gap: 3rem; */
+}
+
+.personal-identity h3 {
+  font-family: var(--font-subtitle);
+  font-size: 2.4rem;
+  /* margin: 0 0 0.5rem 0; */
+  /* color: #2D3748; */
+  /* -webkit-text-stroke: 0.5px #2D3748; */
+}
+
+.identity-colors {
+  display: flex; /* Pone los 3 grupos uno al lado del otro en horizontal */
+  justify-content: center;
+  align-items: flex-start; /* Alinea todos los subtítulos <h4> arriba a la misma altura */
+  gap: 8rem; /* Deja separación horizontal entre cada categoría de color */
+  flex-wrap: wrap; /* Si la pantalla es angosta (celular), baja un grupo debajo del otro */
+  width: 100%; /* Ocupa todo el ancho disponible hasta llegar al límite de max-width */
+  max-width: 950px; /* Evita que en pantallas muy anchas los grupos se separen demasiado */
+}
+
+.color-groups {
+  display: flex;
+  flex-direction: column;     /* Pone el <h4> arriba y los círculos abajo */
+  align-items: center;        /* Centra el subtítulo respecto a sus círculos */
+  gap: 0.9rem;                /* Espacio vertical entre el <h4> y los círculos */
+}
+
+.color-groups h4{
+  font-family: var(--font-subtitle); /* Usa tu fuente Kunaroh */
+  font-size: 1.35rem;                /* Tamaño de letra */
+  color: #055A74;                    /* Azul oscuro de tu paleta */
+  -webkit-text-stroke: 0.5px #055A74;
+  margin: 0;                         /* Quita márgenes por defecto de los títulos */
+}
+
+.color-row{
+  display: flex; /* Pone los círculos lado a lado */
+  gap: 1.2rem; /* Espacio entre cada círculo */
+  align-items: center;
+}
+
+.color-item{
+  display: flex;
+  flex-direction: column;     /* Apila el círculo arriba y el texto #055A74 abajo */
+  align-items: center;        /* Centra el texto justo debajo del círculo */
+  gap: 0.4rem;                /* Separación pequeña entre el círculo y su código */
+}
+
+.color-circle{
+  width: 65px;                /* Ancho del cuadro base */
+  height: 65px;               /* Alto del cuadro base */
+  border-radius: 50%;         /* Redondea las esquinas al 50% para convertir el cuadrado en círculo */
+  box-sizing: border-box;     /* Hace que el borde crezca hacia adentro y no deforme el tamaño */
+  box-shadow: inset -0 -13px 4px #0000002e; /* Sombra interna inferior como en tu diseño[cite: 3] */
+  transition: transform 0.2s ease; /* Suaviza el movimiento cuando pasas el mouse */
+}
+
+.color-circle:hover {
+  transform: scale(1.08);     /* Agranda el círculo ligeramente (un 8%) */
+}
+
+.color-hex {
+  font-family: var(--font-subtitle);
+  font-size: 0.9rem;
+  font-weight: bold;
+  -webkit-text-stroke: 0.5px;
+  margin: 0;                  /* Quita el margen por defecto de la etiqueta <p> */
+}
+
+.about-photos {
+display: flex;                  /* Pone ambas cajas lado a lado */
+  justify-content: space-around;  /* Reparte el espacio equitativamente entre ambos */
+  align-items: flex-start;        /* Alinea los títulos "Logotipo" e "Imagotipo" a la misma altura */
+  gap: 4.7rem;                      /* Separación mínima entre ambos bloques */
+  width: 100%;
+  max-width: 950px;               /* Mismo ancho máximo que la fila de colores para que queden alineados */
+  flex-wrap: wrap;                /* Permite que en celular uno baje debajo del otro */
+}
+/* .about-photos {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 25px;
+} */
+
+
+/* .logotype {
+display: flex;
+  flex-direction: column;     /* Apila el <h4> arriba y la <img> abajo */
+  /* align-items: center;        /* Centra ambos horizontalmente */
+  /* gap: 1.2rem;                Espacio entre el título y la imagen */
+  /* flex: 1;                    Hace que ambas cajas midan exactamente la mitad del ancho */
+  /* min-width: 260px;           Ancho mínimo antes de saltar a otra línea en pantallas pequeñas */ */
+/* } */ 
+
+.logotype {
+  max-height: 110px;          /* Altura máxima de ambos logos */
+  max-width: 100%;            /* Evita que la imagen se salga de su caja en pantallas pequeñas */
+  width: auto;                /* Mantiene la proporción original sin estirar ni aplastar */
+  display: block;             /* Elimina un pequeño espacio fantasma que dejan las imágenes abajo */
+  object-fit: contain;        /* Asegura que toda la imagen quepa completa dentro de su espacio */
+}
+
+/* .logotype { */
+  /* width: 400px;
+  height: auto; */
+  /* max-height: 350px; */
+  /* object-fit: cover;
+  border-radius: 12px; */
+  /* box-shadow: 0 4px 15px rgba(5, 90, 116, 0.1); */
+/* } */
+
+.imagotype {
+  width: 185px;
+  height: auto;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.logo-box h4{
+    font-family: var(--font-subtitle); /* Usa tu fuente Kunaroh */
+  font-size: 1.35rem;                /* Tamaño de letra */
+  color: #055A74;                    /* Azul oscuro de tu paleta */
+  -webkit-text-stroke: 0.5px #055A74;
+  margin: 60px 0 15px ;                         /* Quita márgenes por defecto de los títulos */
 }
