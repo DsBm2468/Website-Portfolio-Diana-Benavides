@@ -21,9 +21,10 @@ export default function App() {
       <main> {/* Esta etiqueta solo envuelve las secciones centrales en App.tsx */}
         <Hero /> {/* Portada principal de la página */}
         <Proyects/>
-        <Services/>
+        
         <AboutMe/>
         <PersonalIndentity/>
+        <Services/>
       </main>
       <Footer/>
       {/* <a href="#top" className="home-float-btn" title="Return to begin">

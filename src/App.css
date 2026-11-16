@@ -81,7 +81,7 @@ header {
   z-index: 1000;             /* Evita que textos o imágenes pasen por encima */
   width: 100%;
   box-sizing: border-box;
-  
+
   display: flex;
   justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
   align-items: center;
@@ -117,7 +117,7 @@ header {
   color: #ffffff; /* Cambio de color al pasar el mouse */
 }
 
-.home-float-btn { 
+.home-float-btn {
   position: fixed; /* Botón fijo en la pantalla */
   bottom: 2rem;
   right: 2rem;
@@ -535,7 +535,7 @@ max-width: 50%;
   border-radius: 10px;
 } */
 
-.education h2, 
+.education h2,
 .experience h2 {
   font-family: var(--font-subtitle);
   font-size: 1.7rem;
@@ -626,11 +626,11 @@ max-width: 50%;
 }
 
 .education.achievements .education-card {
-  border-right-color: #055A74; 
+  border-right-color: #055A74;
 }
 
 .btn-projects {
-  display: inline-block;
+  /* display: inline-block;
   margin-top: -1.5rem;
   color: #ffffff;
   background-color: #7EBBCF;
@@ -639,8 +639,29 @@ max-width: 50%;
   -webkit-text-stroke: 0.5px #ffffff;
   padding: 0.6rem 1.8rem;
   border-radius: 10px;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease; */
 
+  display: inline-flex;                  /* Permite darle tamaño grande y centrar el texto adentro */
+  align-items: center;                   /* Centra el texto verticalmente */
+  justify-content: center;               /* Centra el texto horizontalmente */
+  background-color: #7EBBCF;             /* Azul oscuro principal (resalta sobre el fondo #B6DFEA) */
+  color: #ffffff;
+  font-family: var(--font-subtitle);     /* Misma fuente de tus otros botones (.btn-projects / .btn-cv) */
+  font-size: 1.5rem;                    /* Letra más grande y legible */
+  letter-spacing: 0.5px;
+  -webkit-text-stroke: 0.4px #ffffff;
+  text-decoration: none;                 /* Quita el subrayado de enlace */
+  /*padding: 1.1rem 3rem;                  /* Relleno amplio: esto es lo que hace que el botón se vea grande */
+  padding: 0.5rem;
+  border-radius: 12px;
+  width: 310PX;
+  line-height: 1.3; /* Distancias entre las líneas del texto*/
+
+  /* margin-top: 0.5rem;
+  margin-bottom: 3rem;                   Deja aire abajo antes de llegar al footer */
+  box-shadow: 0 6px 15px rgba(5, 90, 116, 0.22);
+  /* Transición sutil para el cambio de color, elevación y sombra al pasar el mouse */
+  transition: background-color 0.35s ease, transform 0.3s ease, box-shadow 0.35s ease;
 
   /* display: flex;
   flex-direction: column;
@@ -873,7 +894,7 @@ max-width: 50%;
   margin: 0;                  /* Quita el margen por defecto de la etiqueta <p> */
 }
 
-.about-photos {
+.identity-logos {
 display: flex;                  /* Pone ambas cajas lado a lado */
   justify-content: space-around;  /* Reparte el espacio equitativamente entre ambos */
   align-items: flex-start;        /* Alinea los títulos "Logotipo" e "Imagotipo" a la misma altura */
@@ -900,7 +921,7 @@ display: flex;
   /* gap: 1.2rem;                Espacio entre el título y la imagen */
   /* flex: 1;                    Hace que ambas cajas midan exactamente la mitad del ancho */
   /* min-width: 260px;           Ancho mínimo antes de saltar a otra línea en pantallas pequeñas */ */
-/* } */ 
+/* } */
 
 .logotype {
   max-height: 110px;          /* Altura máxima de ambos logos */
@@ -919,7 +940,7 @@ display: flex;
   /* box-shadow: 0 4px 15px rgba(5, 90, 116, 0.1); */
 /* } */
 
-.imagotype {
+.imagotype{
   width: 185px;
   height: auto;
   max-height: 350px;
@@ -928,9 +949,257 @@ display: flex;
 }
 
 .logo-box h4{
-    font-family: var(--font-subtitle); /* Usa tu fuente Kunaroh */
+  font-family: var(--font-subtitle); /* Usa tu fuente Kunaroh */
   font-size: 1.35rem;                /* Tamaño de letra */
   color: #055A74;                    /* Azul oscuro de tu paleta */
   -webkit-text-stroke: 0.5px #055A74;
   margin: 60px 0 15px ;                         /* Quita márgenes por defecto de los títulos */
+}
+
+.adaptability-section{
+  display: flex;
+  flex-direction: column;     /* Pone el título arriba y los 2 bloques de color abajo */
+  align-items: center;        /* Centra el título horizontalmente */
+  width: 100%;                /* Ocupa todo el ancho de la pantalla */
+  gap: 1.5rem;                /* Separación entre el título y la franja de colores */
+}
+
+.adaptability-section h4{
+  font-family: var(--font-subtitle); /* Usa tu fuente Kunaroh */
+  font-size: 1.35rem;                /* Tamaño de letra */
+  color: #055A74;                    /* Azul oscuro de tu paleta */
+  -webkit-text-stroke: 0.5px #055A74;
+  margin: 60px 0 15px ;
+}
+
+.adaptability-split{
+  display: flex;              /* Coloca la mitad izquierda y la derecha una al lado de la otra */
+  width: 100%;                /* Se estira de extremo a extremo de la pantalla */
+}
+
+.adaptability-half{
+  flex: 1;                    /* Hace que ambas mitades crezcan exactamente igual (50% y 50%) */
+  max-width: 50%;             /* Garantiza que ninguna mitad empuje a la otra */
+  padding: 3.5rem 2rem;       /* Espacio interno alrededor de las imágenes */
+  box-sizing: border-box;     /* Evita que el padding desborde el 50% de ancho */
+  display: flex;
+  align-items: center;        /* Centra la cuadrícula verticalmente */
+  justify-content: center;    /* Centra la cuadrícula horizontalmente */
+}
+
+.bg-light {
+  background-color: #7EBBCF;
+}
+
+.bg-dark {
+  background-color: #055A74;
+}
+
+.adaptability-grid{
+  display: grid;                         /* Activa el sistema de cuadrícula */
+  /*grid-template-columns: repeat(2, 1fr); /* Crea 2 columnas del mismo tamaño (2 imágenes por fila) */
+  grid-template-columns:auto auto; /* Cada columna toma el ancho exacto de su imagen (ancho para logos, compacto para imagotipos) */
+  gap: 4rem 6.5rem;                    /* Separa las filas (2.5rem) y las columnas (3.5rem) */
+  justify-items: center;                 /* Centra cada imagen dentro de su celda */
+  align-items: center;                   /* Alinea verticalmente las 2 imágenes de cada fila */
+  width: fit-content;                    /* Hace que la caja mida exactamente lo que miden las imágenes + el espacio entre ellas */
+  /* height: auto; */
+  max-width: 100%;                       /* Evita que se desborde en pantallas más pequeñas */
+  /*max-width: 480px;                      /* Evita que las 2 columnas se separen demasiado en monitores grandes */
+}
+
+/* .logotype-of-adaptability{ */
+  /* max-height: 55px;           Altura máxima uniforme para que todas se vean equilibradas */
+  /* max-width: 100%;            Evita que una imagen ancha se salga de su columna */
+  /* width: auto;                Mantiene la proporción original sin deformar */
+  /* display: block;
+  object-fit: contain;
+  transition: transform 0.25s ease; /* Suaviza el efecto al pasar el mouse */
+/* } */
+
+.adaptability-img{
+  max-height: 105px;           /* Altura máxima uniforme para que todas se vean equilibradas */
+  max-width: 100%;            /* Evita que una imagen ancha se salga de su columna */
+  width: auto;                /* Mantiene la proporción original sin deformar */
+  display: block;
+  /* padding: 2px 1px; */
+  object-fit: contain;
+  gap: 2.5rem 3.5rem;
+  transition: transform 0.25s ease; /* Suaviza el efecto al pasar el mouse */
+}
+
+.adaptability-img:hover {
+  transform: scale(1.06);                /* Agranda un 6% la variante señalada */
+}
+
+/* __________________________________________________________________________________________ */
+/* __________________________________________________________________________________________ */
+
+/* SERVICES */
+.services-container {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  flex-direction: column;
+  width: 100%;
+  background-color: #B6DFEA;
+  /* gap: 3rem; */
+}
+
+.services-section .Titles-of-sections {
+  margin-bottom: 0;
+}
+
+.services-introduction{
+width: 100%;                     /* Se estira a todo el ancho permitido */
+  max-width: 1150px;               /* Mismo ancho máximo que los 6 cuadros para que queden alineados a los bordes */
+  font-family: var(--font-body);   /* Usa tu fuente NewsGothBT */
+  font-size: 1.2rem;               /* Tamaño cómodo para lectura */
+  color: #055A74;                  /* Azul oscuro de tu paleta */
+  text-align: justify;             /* Justifica el texto de lado a lado como en tu Perfil Profesional */
+  line-height: 1.6;                /* Separación entre renglones */
+  margin: -1.5rem;
+}
+
+.services-grid {
+  display: grid;                          /* Activa el sistema de cuadrícula */
+  align-content: center;
+  grid-template-columns: repeat(3, 1fr);  /* Crea 3 columnas iguales (los 6 cuadros se acomodan 3 arriba y 3 abajo) */
+  gap: 3rem 2rem;                              /* Separación vertical y horizontal entre cada cuadro */
+  width: 100%;
+  max-width: 1250px;                      /* Mantiene la cuadrícula alineada con el párrafo resumen */
+  /* margin: 3rem 8rem 3rem 8rem; */
+  margin: 3rem auto;                     /* Centra la cuadrícula sin empujarla con márgenes laterales fijos */
+  padding: 0 2rem;                       /* Evita que los cuadros toquen los bordes si achicas la ventana */
+  box-sizing: border-box;
+}
+
+.service-card {
+  background-color: #538391c3;
+  /*border-radius: 16px;                            /* Esquinas redondeadas */
+  /*padding-top: 1.3rem;                           /* Espacio interno para que el texto no toque los bordes */
+  padding: 1.8rem 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;                         /* Apila el título <h4> arriba y el alcance <p> abajo */
+  justify-content: center;
+  gap: 0.9rem;                                    /* Separación entre el título del cuadro y su descripción */
+  box-shadow: 10px 15px 12px #055a7495;  /* Sombra suave */
+  transition: transform 0.25s ease, box-shadow 0.25s ease; /* Suaviza el movimiento al pasar el mouse */
+}
+
+.service-card:hover {
+  transform: translateY(-5px);                    /* Eleva ligeramente el cuadro hacia arriba */
+  box-shadow: 0 8px 20px rgba(5, 90, 116, 0.22);  /* Intensifica un poco la sombra */
+}
+
+.service-card h4 {
+  font-family: var(--font-subtitle);  /* Tu fuente Kunaroh */
+  font-size: 1.35rem;
+  color: #ffffff;
+  -webkit-text-stroke: 0.5px #ffffff; /* Mismo grosor sutil que usas en tus otros subtítulos */
+  margin: 0;
+  /* padding-top: 12px;
+  padding-left: 22px;
+  padding-right: 22px; */
+  /* padding-bottom: -12px; */
+}
+
+.service-card h5{
+  font-family: var(--font-body2);  /* Tu fuente Kunaroh */
+  font-size: 0.95rem;
+  color: #ffffff;
+  -webkit-text-stroke: 0.5px #ffffff; /* Mismo grosor sutil que usas en tus otros subtítulos */
+  margin: 0;
+  /* padding-top: -21px;
+  padding-bottom: -1px; */
+  line-height: 1.25;
+  /* padding-left: 22px;
+  padding-right: 22px; */
+}
+
+.service-card p {
+  font-family: var(--font-body2);     /* Tu fuente NewsGothBT Roman para lectura ligera */
+  font-size: 1rem;
+  color: #FFFFFF;
+  line-height: 1.25;
+  text-align:center;
+  margin: 0;
+  /* padding-left: 22px;
+  padding-right: 22px;
+  padding-bottom: 21px; */
+}
+
+.btn-tarifario {
+  display: inline-flex;                  /* Permite darle tamaño grande y centrar el texto adentro */
+  align-items: center;                   /* Centra el texto verticalmente */
+  justify-content: center;               /* Centra el texto horizontalmente */
+  background-color: #7EBBCF;             /* Azul oscuro principal (resalta sobre el fondo #B6DFEA) */
+  color: #ffffff;
+  font-family: var(--font-subtitle);     /* Misma fuente de tus otros botones (.btn-projects / .btn-cv) */
+  font-size: 2rem;                    /* Letra más grande y legible */
+  letter-spacing: 0.5px;
+  -webkit-text-stroke: 0.4px #ffffff;
+  text-decoration: none;                 /* Quita el subrayado de enlace */
+  padding: 1.1rem 3rem;                  /* Relleno amplio: esto es lo que hace que el botón se vea grande */
+  border-radius: 12px;
+  margin-top: 0.5rem;
+  margin-bottom: 3rem;                   /* Deja aire abajo antes de llegar al footer */
+  box-shadow: 0 6px 15px rgba(5, 90, 116, 0.22);
+  /* Transición sutil para el cambio de color, elevación y sombra al pasar el mouse */
+  transition: background-color 0.35s ease, transform 0.3s ease, box-shadow 0.35s ease;
+
+ /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+  background-color: #7EBBCF;
+  font-family: var(--font-title);
+  text-decoration: none; /* Quita el subrayado azul de los links */
+  /* -webkit-text-stroke: 0.5px #ffffff; */
+  /* height: 23px; */
+  /* padding: 0.5rem 2rem; */
+  /* padding: 0.6rem 1.8rem; Quitar 'height: 23px' permite que el padding le dé altura sin cortar el texto */
+  /* border-radius: 10px;
+  width: auto;
+  display: block;
+  border-radius: 10px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  margin-bottom: 1.5rem;
+
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: bold; */
+  /* padding: 0.5rem 2rem; */
+  /* gap: 1.5rem; */
+  /* flex-wrap: wrap; Pasa a la siguiente línea si no caben */
+  /* margin-top: 1rem; */
+}
+
+.btn-tarifario:hover {
+  color:#055A74;
+  -webkit-text-stroke: 0.4px #055A74;
+  background-color: #FFFFFF;             /* Cambia suavemente al color oscuro funcional de tu paleta */
+  transform: translateY(-3px);           /* Se eleva sutilmente 3px hacia arriba */
+  
+  box-shadow: 0 10px 22px rgba(45, 55, 72, 0.3); /* Aumenta suavemente la sombra */
+}
+
+.service-card ul {
+  /* line-height: 0.15;
+  text-align: justify; */
+  margin: 0;                             /* Quita el margen superior/inferior gigante que traen las listas por defecto */
+  padding-left: 1.2rem;                  /* Sangría pequeña para las viñetas */
+  color: #FFFFFF;
+  font-family: var(--font-body2);
+  font-size: 0.95rem;
+  line-height: 1.35;                     /* Renglones compactos para que la fila 2 no crezca de más */
+  text-align: left;                      /* Alinea las viñetas a la izquierda para mejor lectura */
+}
+
+.li {
+  /* line-height: 0.15;
+  text-align: justify; */
+  margin-bottom: 0.25rem;                /* Separación mínima entre cada viñeta */
 }
