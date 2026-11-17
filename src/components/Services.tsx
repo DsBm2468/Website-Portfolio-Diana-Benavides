@@ -5,8 +5,9 @@ function Services(){
         <section id="Services" className="services-container">
             <h3 className="Titles-of-sections">SERVICIOS</h3>
             <p className="services-introduction">Ofrezco soluciones integrales en 
-                producción audiovisual, 3D y desarrollo interactivo. Cada servicio 
-                se adapta a las necesidades del proyecto, con tarifas definidas por 
+                producción audiovisual, 3D y desarrollo interactivo. 
+                
+                Cada servicio se adapta a las necesidades del proyecto, con tarifas definidas por 
                 hora, por segundo de animación o por entregable global.
             </p>
 

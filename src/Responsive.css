@@ -1,0 +1,457 @@
+html,
+body {
+  overflow-x: clip;
+}
+/* ==========================================================================
+   AJUSTES GLOBALES DE SEGURIDAD (Evitan desbordamientos en cualquier pantalla)
+   ========================================================================== */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+.LogoBDinHero {
+  max-width: 100%;
+  height: auto;
+}
+
+.hamburger-btn {
+  display: none;
+}
+
+/* ==========================================================================
+   TABLETS Y PANTALLAS MEDIANAS (Hasta 950px)
+   ========================================================================== */
+@media (max-width: 950px) {
+    .about-content h3,
+  .skills-and-software h3,
+  .education h3,
+.experience h3,
+  .Titles-of-sections {
+    line-height: 1.45;
+    padding: 0.3rem 0;
+  }
+
+  /* HEADER */
+  header {
+    padding: 0 1.2rem;
+  }
+
+  .navbar {
+    gap: 1.5rem;
+  }
+
+  .navbar a {
+    font-size: 1.05rem;
+  }
+
+  /* HERO Y DEMO REEL */
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    min-height: auto;
+    padding: 2.5rem 2rem;
+  }
+
+  .LogoBDinHero {
+    max-height: 180px;
+    margin: 0 auto 1rem auto;
+  }
+
+  .hero-btns {
+    justify-content: center;
+  }
+
+  .full-reel-section {
+    width: 100%;
+    min-height: auto;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .full-reel-video {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* SOBRE MÍ (Apila fotos arriba y texto abajo) */
+  .about-body {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .about-photos,
+  .about-content {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .photoDiana {
+    width: 52%;
+    max-width: 340px;
+  }
+
+  .toonDiana {
+    width: 38%;
+    max-width: 240px;
+  }
+
+  /* HABILIDADES Y SOFTWARE */
+  .skills-and-software {
+    flex-direction: column;
+  }
+
+  .skills-column,
+  .software-column {
+    max-width: 100%;
+    width: 100%;
+    padding: 2.5rem 2rem;
+  }
+
+  /* EDUCACIÓN, EXPERIENCIA Y LOGROS */
+  .education,
+  .experience {
+    flex-direction: column;
+    padding: 2.5rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .education-title,
+  .experience-title,
+  .education-scroll-info,
+  .experience-scroll-info {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* En Experiencia, asegura que el título salga arriba de las tarjetas en móvil/tablet */
+  .experience-title {
+    order: -1;
+  }
+
+  /* IDIOMAS */
+  .languages-title {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  /* IDENTIDAD PERSONAL */
+  .identity-colors {
+    gap: 3rem;
+  }
+
+  .identity-logos {
+    gap: 2.5rem;
+  }
+
+  .adaptability-split {
+    flex-direction: column;
+  }
+
+  .adaptability-half {
+    max-width: 100%;
+    width: 100%;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .adaptability-grid {
+    gap: 2.5rem 3.5rem;
+  }
+
+  /* SERVICIOS (2 columnas en tablet) */
+  .services-introduction {
+    margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.5rem;
+    padding: 0 1.5rem;
+  }
+
+  /* PÁGINA DE PROYECTOS */
+  .project-row {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .project-row:nth-child(even) .project-info,
+  .project-row:nth-child(even) .project-collage {
+    order: initial;
+  }
+
+  /* FOOTER */
+  .SocialMedia-Links {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+}
+
+/* ==========================================================================
+   CELULARES (Hasta 768px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  html,
+  body {
+    scroll-padding-top: 75px;
+  }
+
+  header {
+    height: 70px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.2rem;
+  }
+
+  .hamburger-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem;
+    z-index: 1100;
+  }
+
+  .hamburger-btn span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .navbar.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #055A74;
+    padding: 1.5rem 0;
+    gap: 1.3rem;
+    align-items: center;
+    border-top: 1px solid rgba(182, 223, 234, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    z-index: 1050;
+  }
+
+  .navbar.open a {
+    font-size: 1.15rem;
+    padding: 0.3rem 1rem;
+  }
+}
+
+/* ==========================================================================
+   CELULARES (Hasta 600px)
+   ========================================================================== */
+@media (max-width: 600px) {
+  /* html,
+  body {
+    scroll-padding-top: 105px;
+  }
+
+  /* HEADER EN 2 FILAS LIMPIAS (Logo arriba, enlaces abajo sin cortarse) */
+  /* header {
+    height: auto;
+    flex-direction: column;
+    padding: 0.7rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .ImagotipoDB img {
+    max-height: 42px;
+  }
+
+  .navbar {
+    gap: 0.9rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  } */
+
+  /* .navbar a {
+    font-size: 0.92rem;
+  } */
+
+  /* TÍTULOS GENERALES */
+  .Titles-of-sections {
+    font-size: 2rem;
+  }
+
+  .about-content h3,
+  .skills-and-software h3{
+    font-size: 1.75rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .education h3,
+  .experience h3,
+  .languages h3,
+  .personal-identity h3 {
+    font-size: 1.75rem;
+  line-height: 1.45;
+  padding: 0.3rem 0;
+  text-align: center;
+    /* font-size: 1.9rem;
+    text-align: center; */
+  }
+
+  /* HERO */
+  .hero-container {
+    padding: 2rem 1.2rem;
+  }
+
+  .LogoBDinHero {
+    max-height: 135px;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+  }
+
+  .hero-btns {
+    gap: 1rem;
+    font-size: 1.1rem;
+  }
+
+  /* SOBRE MÍ */
+  .about-photos {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .photoDiana,
+  .toonDiana {
+    width: 85%;
+    max-width: 280px;
+  }
+
+  .about-me {
+    font-size: 1.05rem;
+  }
+
+  /* EDUCACIÓN Y EXPERIENCIA */
+  .education h2,
+  .experience h2 {
+    font-size: 1.35rem;
+  }
+
+  .btn-projects {
+    width: 100%;
+    max-width: 280px;
+    font-size: 1.25rem;
+  }
+
+  /* IDIOMAS */
+  .languages {
+    padding: 2rem 1.2rem;
+  }
+
+  .languages-row {
+    gap: 0.8rem;
+  }
+
+  .languages-name {
+    width: 85px;
+    font-size: 1.05rem;
+  }
+
+  .progress-track {
+    height: 46px;
+    border-width: 4px;
+  }
+
+  .liquid-fill {
+    font-size: 0.95rem;
+  }
+
+  /* IDENTIDAD PERSONAL */
+  .identity-colors {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .logotype {
+    max-height: 80px;
+  }
+
+  .imagotype {
+    width: 145px;
+  }
+
+  .adaptability-grid {
+    gap: 1.8rem 2rem;
+  }
+
+  .adaptability-img {
+    max-height: 75px;
+  }
+
+  /* SERVICIOS (1 sola columna en celular) */
+  .services-introduction {
+    font-size: 1.05rem;
+    padding: 0 1.2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1.2rem;
+  }
+
+  .btn-tarifario {
+    font-size: 1.35rem;
+    padding: 0.9rem 1.8rem;
+  }
+
+  /* PÁGINA DE PROYECTOS */
+  .projects-page {
+    padding: 2rem 1.2rem;
+  }
+
+  .project-collage {
+    grid-template-columns: 1fr;
+  }
+
+  .project-collage img:first-child {
+    grid-column: span 1;
+    height: 200px;
+  }
+
+  /* FOOTER Y BOTÓN FLOTANTE */
+  .SocialMedia-Links {
+    flex-direction: column;
+    width: 100%;
+    max-width: 260px;
+    gap: 0.8rem;
+  }
+
+  .SocialMedia-Links a {
+    justify-content: center;
+  }
+
+  .home-float-btn {
+    bottom: 1rem;
+    right: 1rem;
+    width: 38px;
+    height: 38px;
+  }
+}

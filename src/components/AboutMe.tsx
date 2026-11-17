@@ -8,7 +8,7 @@ import myselfToon from "../assets/AboutMe/RETRATO.svg";
 function AboutMe(){
     return(
     <section id="AboutMe" className="about-container">
-        <h2 className="Titles-of-sections">Sobre mí</h2>
+        <h2 className="Titles-of-sections">SOBRE MÍ</h2>
         
         {/* PERFIL PROFESIONAL */}
 

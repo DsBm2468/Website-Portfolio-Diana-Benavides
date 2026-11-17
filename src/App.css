@@ -39,11 +39,13 @@
   min-height: 100vh;
 }
 
-html {
+html,body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /*overflow-x: hidden; /* Evita desbordamientos horizontales y líneas blancas en los bordes */
   scroll-behavior: smooth; /* Desplazamiento suave para toda la página */
-}
-
-body {
+  scroll-padding-top: 65px; /* Frena el scroll 105px antes para que el Header nunca tape los títulos ni el video */
   margin: 0;
   background-color: #ffffff; /* Fondo oscuro global para ver logos/textos claros */
   color: #2D3748;
@@ -90,6 +92,12 @@ header {
   padding: 0 2rem;
   background-color: #055A74; /* Fondo oscuro para el header */
 }
+
+/* .header-logo-link {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.25s ease, filter 0.25s ease;
+} */
 
 .ImagotipoDB img {
   max-height: 55px; /* Ajusta la altura de tu logo según necesites */
@@ -247,7 +255,12 @@ footer.footer {
 
 /* HERO (Portada principal de la página) */
 .hero-container{
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); /* Evita que el logo empuje la columna */
+  /* display: flex; */
+  gap: 4.5rem;                        /* Espacio amplio entre tus párrafos y el video */
+  min-height: calc(100vh - 85px);     /* Ocupa todo el alto visible debajo del Header sin que se asome el video de abajo */
+  box-sizing: border-box;
   align-items: center;
   justify-content: space-between;
   padding: 4rem 2rem; /* Le da espacio para respirar mientras vas agregando contenido */
@@ -260,13 +273,60 @@ footer.footer {
 }
 
 .hero-content { /* Limitan los elementos a la mitad izquierda de la pantalla */
-flex: 1;
-max-width: 50%;
+/* flex: 1; */
+/* max-width: 50%; */
+width: 100%;
+  max-width: 100%;
 }
 
 .hero-media { /* Limitan los elementos a la mitad derecha de la pantalla */
-  flex: 1;
-  max-width: 50%;
+  /* flex: 1;
+  max-width: 50%; */
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-video-preview {
+  display: block;
+  width: 100%;
+  border: 3px solid #055A74;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #055A74;
+box-shadow: 12px 15px 23px #7EBBCF;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-preview-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.full-reel-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #000000;
+  margin: 0;
+  margin-top: 15px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.full-reel-video {
+  width: 75%;
+  max-width: 1200px;
+  /* max-height: 78vh; */
+  /* height: auto; */
+  /* max-height: 90vh; */
+  aspect-ratio: 16 / 9;
+  display: block;
+  object-fit: contain;
 }
 
 .LogoBDinHero {
@@ -353,7 +413,8 @@ max-width: 50%;
   font-family: var(--font-title);
   font-size: 2.5rem;
   color: #055A74;
-  margin-bottom: 2.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
@@ -830,6 +891,8 @@ max-width: 50%;
 .personal-identity h3 {
   font-family: var(--font-subtitle);
   font-size: 2.4rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
   /* margin: 0 0 0.5rem 0; */
   /* color: #2D3748; */
   /* -webkit-text-stroke: 0.5px #2D3748; */
@@ -1046,8 +1109,10 @@ display: flex;
   /* gap: 3rem; */
 }
 
-.services-section .Titles-of-sections {
-  margin-bottom: 0;
+.services-container .Titles-of-sections {
+  /* margin-bottom: 0; */
+    margin-top: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 .services-introduction{
@@ -1059,6 +1124,7 @@ width: 100%;                     /* Se estira a todo el ancho permitido */
   text-align: justify;             /* Justifica el texto de lado a lado como en tu Perfil Profesional */
   line-height: 1.6;                /* Separación entre renglones */
   margin: -1.5rem;
+  text-align: center;
 }
 
 .services-grid {
