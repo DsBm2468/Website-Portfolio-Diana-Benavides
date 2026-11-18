@@ -983,7 +983,7 @@ display: flex;
   /* align-items: center;        /* Centra ambos horizontalmente */
   /* gap: 1.2rem;                Espacio entre el título y la imagen */
   /* flex: 1;                    Hace que ambas cajas midan exactamente la mitad del ancho */
-  /* min-width: 260px;           Ancho mínimo antes de saltar a otra línea en pantallas pequeñas */ */
+  /* min-width: 260px;           Ancho mínimo antes de saltar a otra línea en pantallas pequeñas */ 
 /* } */
 
 .logotype {
