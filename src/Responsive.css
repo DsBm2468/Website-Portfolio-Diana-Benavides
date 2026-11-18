@@ -2,6 +2,7 @@ html,
 body {
   overflow-x: clip;
 }
+
 /* ==========================================================================
    AJUSTES GLOBALES DE SEGURIDAD (Evitan desbordamientos en cualquier pantalla)
    ========================================================================== */
@@ -24,13 +25,35 @@ video {
    TABLETS Y PANTALLAS MEDIANAS (Hasta 950px)
    ========================================================================== */
 @media (max-width: 950px) {
-    .about-content h3,
+
+  .about-content h3,
   .skills-and-software h3,
   .education h3,
-.experience h3,
+  .experience h3,
   .Titles-of-sections {
     line-height: 1.45;
     padding: 0.3rem 0;
+
+    /* PÁGINA DE PROYECTOS */
+    .project-top,
+    .project-block:nth-child(even) .project-top,
+    .project-top.project-top-reverse {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .project-info,
+    .project-main-media {
+      width: 100%;
+    }
+
+    .gallery-item {
+      width: 48%;
+    }
+
+    .gallery-wide {
+      width: 100%;
+    }
   }
 
   /* HEADER */
@@ -200,6 +223,7 @@ video {
    ========================================================================== */
 
 @media (max-width: 768px) {
+
   html,
   body {
     scroll-padding-top: 75px;
@@ -296,7 +320,7 @@ video {
   }
 
   .about-content h3,
-  .skills-and-software h3{
+  .skills-and-software h3 {
     font-size: 1.75rem;
     line-height: 1.5;
     text-align: center;
@@ -307,9 +331,9 @@ video {
   .languages h3,
   .personal-identity h3 {
     font-size: 1.75rem;
-  line-height: 1.45;
-  padding: 0.3rem 0;
-  text-align: center;
+    line-height: 1.45;
+    padding: 0.3rem 0;
+    text-align: center;
     /* font-size: 1.9rem;
     text-align: center; */
   }
@@ -454,4 +478,20 @@ video {
     width: 38px;
     height: 38px;
   }
+
+  /* PÁGINA DE PROYECTOS */
+.proyects-page {
+  padding: 1.5rem 1.2rem 3rem 1.2rem;
+}
+
+.gallery-item,
+.gallery-wide {
+  width: 100%;
+}
+
+.gallery-item img,
+.gallery-item video {
+  height: auto;
+  max-height: 260px;
+}
 }

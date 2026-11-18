@@ -46,7 +46,7 @@ function Header() {
         <Link to="/#PersonalIdentity" onClick={() => setMenuAbierto(false)}>
           IDENTIDAD PERSONAL
         </Link>
-        <Link to="/#Footer" onClick={() => setMenuAbierto(false)}>
+        <Link to="/#Contact" onClick={() => setMenuAbierto(false)}>
           CONTACTO
         </Link>
       </nav>

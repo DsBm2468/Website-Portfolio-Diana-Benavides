@@ -1,5 +1,5 @@
 import { useRef } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import logoDB from "../assets/PersonalIdentity/Logotipo principal.png";
 import pdfATS from "../assets/PDFs/Hoja_de_Vida_ATS_Diana_Sofia_Benavides.pdf";
@@ -52,11 +52,20 @@ function Hero() { // Hero es el término técnico en diseño web para la portada
                     </p>
 
                     <div className="hero-btns">
-                        <a
-                            href="#Proyects"
-                            className="link-proyects">
-                            Ver proyectos
+                        <Link
+                            to="/proyectos"
+                            className="link-proyects"
+                            onClick={() => window.scrollTo(0, 0)}
+                        >
+                            VER PROYECTOS
+                        </Link>
+                        {/* <a
+
+                            // href="#Proyects"
+                            // className="link-proyects">
+                            // Ver proyectos
                         </a>
+                         */}
 
                         <a
                             href={pdfATS}
